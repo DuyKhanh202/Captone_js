@@ -1,0 +1,25 @@
+//mixin
+// mixin giúp tạo một đoạn hàm dùng tái sử dụng ở những nơi mà chúng ta gọi tới
+
+@mixin styleText($fs, $fw, $color) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin styleButton($bg, $color) {
+  // $bg = blue // $color = white
+  background-color: $bg;
+  color: $color;
+  border: 1px solid $blue_color_1;
+  border-radius: 6px;
+  padding: 15px 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  // sử dung parent selector đẻ tao một hover cho thẻ button sử dụng mixin
+
+  &:hover {
+    background-color: $color;
+    color: $bg;
+  }
+}

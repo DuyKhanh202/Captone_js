@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+#exampleModal.modal.show {
+  position: fixed;
+  padding-right: 0px !important;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+#exampleModal.modal.fade {
+  position: fixed;
+  padding-right: 0px !important;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+#exampleModal .modal-dialog {
+  width: 400px;
+}
+
+#exampleModal .modal-footer {
+  display: block;
+  justify-content: initial;
+}
+
+#exampleModal .modal-body {
+  .cart_item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    &_info {
+      p {
+        margin: 0 0 0 5px;
+      }
+    }
+    &_buttons {
+      i {
+        color: white;
+      }
+      position: absolute;
+      right: 0;
+      button {
+        transition: all 0.5s;
+        width: 35px;
+        background-color: orange;
+        &:nth-child(1) {
+          background-color: green; // Sử dụng biến màu đỏ
+        }
+        &:nth-child(2) {
+          background-color: blue; // Sử dụng biến màu đỏ
+        }
+        &:nth-child(3) {
+          background-color: red; // Sử dụng biến màu đỏ
+        }
+        &:hover {
+          background-color: black;
+        }
+      }
+    }
+  }
+}

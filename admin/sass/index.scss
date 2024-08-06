@@ -1,0 +1,16 @@
+// sử dụng import để kết nối các file scss con vào bên trong file style.scss
+@import "./Helper/animation.scss";
+
+//variable và mixin
+@import "./Helper/variable.scss";
+@import "./Helper/mixin";
+
+@import "./Base/reset.scss";
+@import "./Base/custom.scss";
+
+@import "./Layout/header.scss";
+@import "./Layout/product";
+@import "./Layout/footer";
+
+// theme
+@import "./Theme/dark/headerDark";

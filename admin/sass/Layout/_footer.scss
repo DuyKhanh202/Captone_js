@@ -1,0 +1,25 @@
+/* footer */
+.footer {
+  background-color: #2a73dde3;
+  padding: 45px;
+  color: #fff;
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+    .nav-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}
