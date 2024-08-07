@@ -1,0 +1,9 @@
+function CallApi() {
+    this.fectchData = function () {
+        var promise = axios({
+            url: "https://66a7892853c13f22a3d01ae2.mockapi.io/product",
+            method: "GET",
+        });
+        return promise;
+    };
+}
