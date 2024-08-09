@@ -2,5 +2,6 @@ Lê Nguyễn Duy Khánh
     + getlist sản phẩm | Add sản Phẩm
     + Validation cho phần thêm sản phẩm
     + Xóa sản Phẩm | sử dụng SweetAlert2
+    + Tìm kiếm  theo tên sản phẩm
 
 Lê Minh Quang

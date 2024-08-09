@@ -22,4 +22,15 @@ function CallApi() {
         });
         return promise;
     };
+    // Tìm kiếm  theo tên sản phẩm
+    this.searchProductByName = function (tenSP) {
+        var promise = axios({
+            url: "https://66a7892853c13f22a3d01ae2.mockapi.io/product",
+            method: "GET",
+            params: {
+                tenSP: tenSP
+            }
+        });
+        return promise;
+    };
 }

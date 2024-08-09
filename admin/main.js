@@ -43,8 +43,12 @@ function renderUI(data) {
     }
 
     getEle("tblDanhSachSP").innerHTML = content;
+    // Thêm sự kiện click cho nút tìm kiếm
+    document.getElementById('searchButton').onclick = function () {
+        var searchName = document.getElementById('searchInput').value;
+        getListProduct(searchName);  // Gọi hàm tìm kiếm với từ khóa
+    };
 }
-
 getEle("btnThemSP").onclick = function () {
     // Sửa lại tiêu đề cho modal
     document.getElementsByClassName("modal-title")[0].innerHTML = "Add Product";
@@ -60,9 +64,9 @@ function addProduct() {
     var tenSP = getEle("TenSP").value;
     var gia = getEle("GiaSP").value;
     var hinhAnh = getEle("HinhSP").value;
-    var loaiSP = getEle("loai_SP").value; // Cập nhật loại sản phẩm
+    var loaiSP = getEle("loai_SP").value; 
     var moTa = getEle("MoTa").value;
-    var soLuong = getEle("soLuong").value; // Cập nhật số lượng sản phẩm
+    var soLuong = getEle("soLuong").value; 
 
     // Tạo đối tượng sản phẩm mới
     var product = new Product("", tenSP, gia, hinhAnh, loaiSP, moTa, soLuong);
@@ -134,4 +138,24 @@ function deleteProduct(id) {
                 });
         }
     });
+}
+//  tìm kiếm sản phẩm
+function getListProduct(tenSP) {
+    var promise;
+
+    if (tenSP) {
+        // Nếu có tên sản phẩm, gọi API tìm kiếm
+        promise = api.searchProductByName(tenSP);
+    } else {
+        // Nếu không có tên sản phẩm, gọi API lấy toàn bộ danh sách
+        promise = api.fectchData();
+    }
+
+    promise
+        .then(function (result) {
+            renderUI(result.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
