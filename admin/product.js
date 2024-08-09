@@ -4,6 +4,6 @@ function Product(id, tenSP, gia, hinhAnh, moTa, soLuong, loaiSP) {
     this.gia = gia;
     this.hinhAnh = hinhAnh;
     this.moTa = moTa;
-    this.moTa = loaiSP;
-    this.moTa = soLuong;
+    this.loaiSP = loaiSP;
+    this.soLuong = soLuong;
 }
