@@ -64,9 +64,9 @@ function addProduct() {
     var tenSP = getEle("TenSP").value;
     var gia = getEle("GiaSP").value;
     var hinhAnh = getEle("HinhSP").value;
-    var loaiSP = getEle("loai_SP").value; 
+    var loaiSP = getEle("loai_SP").value;
     var moTa = getEle("MoTa").value;
-    var soLuong = getEle("soLuong").value; 
+    var soLuong = getEle("soLuong").value;
 
     // Tạo đối tượng sản phẩm mới
     var product = new Product("", tenSP, gia, hinhAnh, loaiSP, moTa, soLuong);
