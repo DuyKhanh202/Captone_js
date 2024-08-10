@@ -159,3 +159,51 @@ function getListProduct(tenSP) {
             console.log(error);
         });
 }
+//sửa sản phẩm
+function editProduct(id) {
+    //sửa lại tiêu đề cho modal
+    document.getElementsByClassName("modal-title")[0].innerHTML = "Edit Product";
+
+    //tạo nút "Update" => gắn vào footer của modal
+    var btnUpdate = `<button class="btn btn-info" onclick="updateProduct(${id})">Cập nhật sản phẩm</button>`;
+    document.getElementsByClassName("modal-footer")[0].innerHTML = btnUpdate;
+
+    //lấy thông tin chi tiết của product dựa vào id
+    var promise = api.getProductById(id);
+
+    promise
+        .then(function (result) {
+            var product = result.data;
+            //show data ra ngoài các thẻ input
+            getEle("TenSP").value = product.tenSP;
+            getEle("GiaSP").value = product.gia;
+            getEle("HinhSP").value = product.hinhAnh;
+            getEle("MoTa").value = product.moTa;
+            getEle("loai_SP").value = product.loaiSP;
+            getEle("soLuong").value = product.soLuong;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function updateProduct(id) {
+    // lấy thông tin từ user nhập liệu
+    var tenSP = getEle("TenSP").value;
+    var gia = getEle("GiaSP").value;
+    var hinhAnh = getEle("HinhSP").value;
+    var loaiSP = getEle("loai_SP").value;
+    var moTa = getEle("MoTa").value;
+    var soLuong = getEle("soLuong").value;
+    var product = new Product(id, tenSP, gia, hinhAnh, loaiSP, moTa, soLuong);
+
+    api
+        .updateProductApi(product)
+        .then(function () {
+            //close modal
+            document.getElementsByClassName("close")[0].click();
+            getListProduct();
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
