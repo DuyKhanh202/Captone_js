@@ -158,8 +158,7 @@ function getListProduct(tenSP) {
         .catch(function (error) {
             console.log(error);
         });
-}
-//sửa sản phẩm
+}//sửa sản phẩm
 function editProduct(id) {
     //sửa lại tiêu đề cho modal
     document.getElementsByClassName("modal-title")[0].innerHTML = "Edit Product";
@@ -207,3 +206,4 @@ function updateProduct(id) {
             console.log(error);
         });
 }
+
