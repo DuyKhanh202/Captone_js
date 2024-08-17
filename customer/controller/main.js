@@ -19,22 +19,22 @@ function renderUI(data) {
     // Kiểm tra nếu product.moTa có giá trị, nếu không thì thay bằng "Mô tả không có sẵn"
 
     content += `
-        <div class="product_item">
-          <img src="../img/${product.hinhAnh}" alt="${product.tenSP}">
-          <div class="item_title">
-            <h3>${product.tenSP}</h3>
-            <span>${product.gia.toLocaleString()}</span>
-          </div>
-          <p class="sub_title">${product.loaiSP}</p>
-          <div class="product_action">
-            <h4>${product.moTa}</h4>
-            <button class="buy_now" id="buy_now" onclick="addToCart('${
-              product.tenSP
-            }', '${product.hinhAnh}', '${product.gia}','${
+          <div class="product_item">
+            <img src="../img/${product.hinhAnh}" alt="${product.tenSP}">
+            <div class="item_title">
+              <h3>${product.tenSP}</h3>
+              <span>${product.gia.toLocaleString()}</span>
+            </div>
+            <p class="sub_title">${product.loaiSP}</p>
+            <div class="product_action">
+              <h4>${product.moTa}</h4>
+              <button class="buy_now" id="buy_now" onclick="addToCart('${
+                product.tenSP
+              }', '${product.hinhAnh}', '${product.gia}','${
       product.id
     }')">Mua Ngay</button>
-          </div>
-        </div>`;
+            </div>
+          </div>`;
   }
   document.getElementById("products_list").innerHTML = content;
 }
@@ -149,32 +149,32 @@ function displayCartItem(products) {
     return (
       result +
       `
-          <div class="cart_item mt-3" data-product-name="${
-            value.name
-          }" data-quantity="1">
-            <div class="cart_item_img">
-              <img src="../img/${value.img}" alt="" />
+            <div class="cart_item mt-3" data-product-name="${
+              value.name
+            }" data-quantity="1">
+              <div class="cart_item_img">
+                <img src="../img/${value.img}" alt="" />
+              </div>
+      
+              <div class="cart_item_info">
+                <p>Sản phẩm: ${value.name}</p>
+                <p>Số lượng: ${value.quantity}</p>
+                <p>Giá tiền: ${value.price.toLocaleString()}$</p>
+              </div>
+      
+              <div class="cart_item_buttons">
+                <button onclick="increaseQuantity('${
+                  value.name
+                }')"><i class="fa fa-plus"></i></button>
+                <button onclick="decreaseQuantity('${
+                  value.name
+                }')"><i class="fa fa-minus"></i></button>
+                <button onclick="removeProductFromCart('${
+                  value.name
+                }')"><i class="fa fa-trash"></i></button>
+              </div>
             </div>
-    
-            <div class="cart_item_info">
-              <p>Sản phẩm: ${value.name}</p>
-              <p>Số lượng: ${value.quantity}</p>
-              <p>Giá tiền: ${value.price.toLocaleString()}$</p>
-            </div>
-    
-            <div class="cart_item_buttons">
-              <button onclick="increaseQuantity('${
-                value.name
-              }')"><i class="fa fa-plus"></i></button>
-              <button onclick="decreaseQuantity('${
-                value.name
-              }')"><i class="fa fa-minus"></i></button>
-              <button onclick="removeProductFromCart('${
-                value.name
-              }')"><i class="fa fa-trash"></i></button>
-            </div>
-          </div>
-        `
+          `
     );
   }, "");
 

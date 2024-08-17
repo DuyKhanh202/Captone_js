@@ -7,3 +7,4 @@ function Product(id, tenSP, gia, hinhAnh, moTa, soLuong, loaiSP) {
   this.soLuong = soLuong;
   this.loaiSP = loaiSP;
 }
+this.id;
