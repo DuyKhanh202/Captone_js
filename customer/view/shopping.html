@@ -104,16 +104,11 @@
                         </span>
                     </div>
 
-
                     <select id="productSelect">
                         <option value="active">Chọn loại sản phẩm</option>
-                        <option onchange="onProductSelectChange()" class="type" value="Vàng">
-                            Vàng
-                        </option>
-                        <option onchange="onProductSelectChange()" class="type" value="Bạc">
-                            Bạc
-                        </option>
-                    </select>
+                        <option value="Apple">Apple</option>
+                        <option value="Samsung">Samsung</option>
+                      </select>
                 </div>
             </div>
 
@@ -157,10 +152,9 @@
     <!-- sweet-alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css" rel="stylesheet" />
-
-    <script src="./../model/customersproduct.js"></script>
-    <script src="./../service/customersApi.js"></script>
-    <script src="./../controller/customershop.js"></script>
+    <script src="../controller/customerProduct.js"></script>
+    <script src="../service/customerApi.js"></script>
+    <script src="../controller/main.js"></script>
 </body>
 
 </html>
